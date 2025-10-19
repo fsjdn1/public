@@ -13,6 +13,6 @@ jobs:
       - name: Ping Azure Frontend
         run: |
           echo "Pinging frontend..."
-          curl -s -o /dev/null -w "%{http_code}\n" https://rural10.com.br/metas
+          curl -s -o /dev/null -w "%{http_code}\n" https://rural10.com.br
 
   
