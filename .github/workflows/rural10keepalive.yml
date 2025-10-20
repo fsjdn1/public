@@ -1,0 +1,21 @@
+name: Keep Azure rural10 App Awake
+
+on:
+  schedule:
+    # Executa a cada 10 minutos (você pode ajustar)
+    - cron: "*/10 * * * *"
+  workflow_dispatch: # permite rodar manualmente
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Azure Frontend
+        run: |
+          echo "Pinging frontend..."
+          curl -s -o /dev/null -w "%{http_code}\n" https://rural10.com.br
+          
+      - name: Ping Azure Backend
+        run: |
+          echo "Pinging backend to keep services warm..."
+          curl -s -f -o /dev/null https://rural10back-dyebhefkh7ekfjfn.brazilsouth-01.azurewebsites.net/api/health
