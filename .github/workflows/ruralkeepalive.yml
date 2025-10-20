@@ -14,8 +14,3 @@ jobs:
         run: |
           echo "Pinging frontend..."
           curl -s -o /dev/null -w "%{http_code}\n" https://rural10.com.br
-          
-      - name: Ping Azure Backend
-        run: |
-          echo "Pinging backend to keep services warm..."
-          curl -s -f -o /dev/null https://rural10back-dyebhefkh7ekfjfn.brazilsouth-01.azurewebsites.net/api/health    
