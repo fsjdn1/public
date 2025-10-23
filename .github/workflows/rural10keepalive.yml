@@ -3,7 +3,7 @@ name: Keep Azure rural10 App Awake
 on:
   schedule:
     # Executa a cada 10 minutos (você pode ajustar)
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch: # permite rodar manualmente
 
 jobs:
